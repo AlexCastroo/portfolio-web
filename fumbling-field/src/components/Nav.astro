@@ -1,0 +1,56 @@
+<header class="nav" id="site-nav">
+  <div class="wrap nav-row">
+    <a href="#top" class="nav-brand">
+      <span class="brand-dot"></span>
+      <span class="mono">Alex Castro <span class="muted">— dev</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#stack">Stack</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="nav-cta">
+      <span>Contáctame</span>
+      <svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 12 L12 2 M5 2 H12 V9" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="square"/></svg>
+    </a>
+    <button class="nav-burger" id="nav-burger" aria-label="menu">
+      <span id="burger-top"></span>
+      <span id="burger-mid"></span>
+      <span id="burger-bot"></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="nav-mobile" style="display:none">
+    <a href="#about" class="nav-mobile-link">About</a>
+    <a href="#stack" class="nav-mobile-link">Stack</a>
+    <a href="#work" class="nav-mobile-link">Work</a>
+    <a href="#contact" class="nav-mobile-link">Contact</a>
+  </div>
+</header>
+
+<script>
+  const burger = document.getElementById('nav-burger')!;
+  const mobile = document.getElementById('nav-mobile')!;
+  const top = document.getElementById('burger-top')!;
+  const mid = document.getElementById('burger-mid')!;
+  const bot = document.getElementById('burger-bot')!;
+  let open = false;
+
+  burger.addEventListener('click', () => {
+    open = !open;
+    mobile.style.display = open ? 'flex' : 'none';
+    top.style.transform = open ? 'translateY(6.5px) rotate(45deg)' : '';
+    mid.style.opacity = open ? '0' : '1';
+    bot.style.transform = open ? 'translateY(-6.5px) rotate(-45deg)' : '';
+  });
+
+  document.querySelectorAll('.nav-mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      open = false;
+      mobile.style.display = 'none';
+      top.style.transform = '';
+      mid.style.opacity = '1';
+      bot.style.transform = '';
+    });
+  });
+</script>

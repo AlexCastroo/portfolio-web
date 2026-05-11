@@ -1,0 +1,122 @@
+---
+const jobs = [
+  { co: "Royal FC (Dubái)",  role: "Fullstack Developer",    date: "2025-2026", desc: "Jugué una temporada en un club de fútbol en Dubai. El proceso para contratar pruebas de captación era por WhatsApp, tediosa y sin control. Le comenté al presidente que podía ofrecerle una solución. Acabé siendo responsable IT del club y construyendo el sistema completo: paquetes de pruebas, formularios, pagos con Stripe, un dashboard para que administración gestionara todo sin tocar el móvil." },
+  { co: "TORSA Mining",  role: "Fullstack Developer",    date: "2025", desc: "Trabajé en un equipo mundial y multidisciplinar construyendo interfaces críticas de monitorización de dispositivos, anomalías y alertas en tiempo real vía middleware especializado. En el sector de la minería, donde un fallo en el monitoreo no es un bug, es un riesgo real." },
+  { co: "Help Global Consulting",  role: "Fullstack Developer", date: "2024-2025",    desc: "Entré cuando el MVP ya estaba corriendo, construido en tiempo récord, con toda la deuda técnica que eso implica. Queries con N+1, componentes inestables, sin testing, sin una dirección técnica clara. Ahí entendí de verdad cómo funciona esto por dentro. No solo arreglábamos código, participábamos en decisiones de negocio y de producto. Eso cambia cómo piensas como developer" },
+  { co: "Cargestion",  role: "Fullstack Developer",           date: "2024",    desc: "Mi primera tarea fue entender la arquitectura antes de tocar nada, cada cliente tenía su propia base de datos y un fallo en producción afectaba contratos reales, multas, reservas activas.Desarrollé funcionalidades para visualización de datos y gestión de la API en Laravel. Un software que no puede fallar porque detrás hay un coche alquilado y un cliente esperando." },
+];
+const tags = ["Laravel", "Vue 3", "MySQL", "Inertia", "Docker"];
+---
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="mono small muted">— 03 / WORK</div>
+      <div class="mono small muted">PROYECTOS &amp; EXPERIENCIA</div>
+    </div>
+    <hr class="rule" />
+
+    <div class="featured">
+      <div class="featured-meta reveal">
+        <span class="mono small muted">PROYECTO DESTACADO</span>
+        <span class="mono small muted">— ⌥ FT</span>
+      </div>
+
+      <div class="featured-grid">
+        <div class="featured-left">
+          <h3 class="display-tight featured-title reveal">
+            Area<span class="orange">Soccer</span>
+          </h3>
+          <p class="featured-desc reveal d1">
+            Plataforma web para la gestión y seguimiento de ligas de fútbol.
+            Sistema completo con gestión de equipos, jugadores, resultados
+            y estadísticas en tiempo real.
+          </p>
+          <div class="tag-row reveal d2">
+            {tags.map(t => <span class="tag mono small">{t}</span>)}
+          </div>
+          <a href="#" class="btn-ghost reveal d3" data-hover>
+            <span>Ver proyecto</span>
+            <svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 8 H14 M10 4 L14 8 L10 12" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+          </a>
+          <div class="featured-numbers reveal d4">
+            <div><span class="display">2.4k</span><span class="mono small muted">USUARIOS</span></div>
+            <div><span class="display">98<small>%</small></span><span class="mono small muted">UPTIME</span></div>
+            <div><span class="display">12</span><span class="mono small muted">LIGAS</span></div>
+          </div>
+        </div>
+
+        <div class="featured-right reveal d2">
+          <div class="device-laptop">
+            <div class="device-frame">
+              <div class="device-screen">
+                <div class="mock-topbar">
+                  <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                  <span class="mono small mock-url">areasoccer.app / dashboard</span>
+                </div>
+                <div class="mock-body">
+                  <div class="mock-side">
+                    <span>·· Liga</span>
+                    <span>·· Equipos</span>
+                    <span class="mock-active">·· Partidos</span>
+                    <span>·· Jugadores</span>
+                    <span>·· Stats</span>
+                  </div>
+                  <div class="mock-main">
+                    <div class="mock-h">
+                      <span class="display mock-big">17<small>:00</small></span>
+                      <span class="mono small">JORNADA · 12</span>
+                    </div>
+                    <div class="mock-match">
+                      <div class="mock-team">
+                        <span class="mock-crest"></span>
+                        <span>CD Atlético</span>
+                      </div>
+                      <div class="mock-score display">2 — 1</div>
+                      <div class="mock-team">
+                        <span class="mock-crest c2"></span>
+                        <span>Real Norte</span>
+                      </div>
+                    </div>
+                    <div class="mock-stats">
+                      <div><span class="mono small muted">POSESIÓN</span><div class="bar"><div style="width:62%"></div></div></div>
+                      <div><span class="mono small muted">TIROS</span><div class="bar"><div style="width:48%"></div></div></div>
+                      <div><span class="mono small muted">PASES</span><div class="bar"><div style="width:78%"></div></div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="device-base"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="rule" style="margin-top: 4rem" />
+
+    <div class="xp">
+      <div class="xp-head reveal">
+        <h3 class="display xp-title">Experiencia</h3>
+        <span class="mono small muted">— TIMELINE / 2019 → NOW</span>
+      </div>
+      <div class="timeline">
+        {jobs.map((j, i) => (
+          <div class="t-row reveal" style={`transition-delay: ${i * 0.08}s`}>
+            <div class="t-left">
+              <div class="t-node"><span></span></div>
+              <div class="t-line"></div>
+            </div>
+            <div class="t-content">
+              <div class="t-meta mono small muted">{j.date}</div>
+              <div class="t-headline">
+                <span class="t-co display">{j.co}</span>
+                <span class="t-role">— {j.role}</span>
+              </div>
+              <p class="t-desc">{j.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

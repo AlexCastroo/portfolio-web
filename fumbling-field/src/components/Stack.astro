@@ -1,0 +1,39 @@
+---
+const groups = [
+  { label: "CORE",             items: ["PHP", "JavaScript", "SQL", "REST APIs", "Web Scraping"], hl: ["PHP"] },
+  { label: "BACKEND",          items: ["Laravel", "MySQL", "PostgreSQL", "Redis", "Eloquent"],   hl: ["Laravel"] },
+  { label: "FRONTEND",         items: ["Vue.js", "React", "Tailwind CSS", "Inertia.js", "HTML/CSS"], hl: [] },
+  { label: "SISTEMAS / DEVOPS",items: ["Docker", "Linux", "Nginx", "Git", "CI/CD", "VPS"],      hl: [] },
+];
+---
+<section class="stack" id="stack">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="mono small muted">— 02 / STACK</div>
+      <div class="mono small muted">HERRAMIENTAS &amp; TECH</div>
+    </div>
+    <hr class="rule" />
+    <h2 class="display stack-title reveal">
+      Tech<span class="orange">.</span>Stack
+    </h2>
+    <div class="stack-grid">
+      {groups.map((g, gi) => (
+        <div class={`stack-group reveal d${gi + 1}`}>
+          <div class="stack-group-head">
+            <span class="mono small group-num">0{gi + 1}</span>
+            <span class="mono small group-label">{g.label}</span>
+          </div>
+          <ul class="stack-list">
+            {g.items.map(it => (
+              <li class={g.hl.includes(it) ? "hl" : ""}>
+                <span class="stack-bullet"></span>
+                <span>{it}</span>
+                {g.hl.includes(it) && <span class="mono small spec">SPECIALIST</span>}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
