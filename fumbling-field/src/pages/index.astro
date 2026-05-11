@@ -520,6 +520,73 @@ import Contact from '../components/Contact.astro';
     white-space: nowrap;
     margin-bottom: -0.1em;
     text-align: center;
+    overflow: hidden;
+  }
+
+  /* =============================================
+     RESPONSIVE — MOBILE FIRST FIXES
+     ============================================= */
+
+  /* Small mobile < 480px */
+  @media (max-width: 479px) {
+    .hero-meta { flex-wrap: wrap; gap: 6px; }
+    .title-portrait {
+      width: clamp(52px, 13vw, 200px);
+      height: clamp(71px, 18vw, 280px);
+    }
+    .featured-numbers { flex-wrap: wrap; gap: 16px 28px; }
+    .contact-links { gap: 16px; }
+    .footer-row { flex-direction: column; align-items: flex-start; gap: 6px; }
+  }
+
+  /* Mobile < 600px */
+  @media (max-width: 599px) {
+    .hero { padding: 88px 0 48px; }
+    .section-head { padding-top: 3.5rem; flex-wrap: wrap; gap: 6px; }
+
+    /* hero */
+    .hero-eyebrow { flex-wrap: wrap; }
+    .hero-footer { margin-top: 28px; gap: 20px; }
+    .side-num { font-size: 52px; }
+
+    /* work */
+    .featured-title { font-size: clamp(48px, 12vw, 170px); }
+    .xp-head { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .xp-title { font-size: clamp(36px, 8vw, 64px); }
+
+    /* contact */
+    .contact-h { font-size: clamp(36px, 10vw, 180px); }
+    .contact-inner { padding: 40px 0 56px; }
+    .contact-actions { flex-direction: column; align-items: center; }
+    .contact-actions .btn-primary.big,
+    .contact-actions .btn-ghost.big { width: 100%; justify-content: center; }
+    .contact-actions .btn-ghost.big { flex-direction: row; align-items: center; }
+
+    /* footer */
+    .footer-mega {
+      white-space: normal;
+      word-break: break-word;
+      font-size: clamp(52px, 16vw, 280px);
+      overflow: visible;
+    }
+  }
+
+  /* Tablet — intermediate hero-footer cols (600–799px) */
+  @media (min-width: 600px) and (max-width: 799px) {
+    .hero-footer {
+      grid-template-columns: 1fr 1fr;
+    }
+    .hero-badge { grid-column: 1 / -1; }
+  }
+
+  /* Tablet — about grid earlier (768–899px) */
+  @media (min-width: 768px) and (max-width: 899px) {
+    .about-grid { grid-template-columns: 1.2fr 1fr; gap: 48px; }
+  }
+
+  /* Tablet general (600–1099px) */
+  @media (min-width: 600px) and (max-width: 1099px) {
+    .stack-group:first-child { padding-left: 28px; }
   }
 </style>
 
