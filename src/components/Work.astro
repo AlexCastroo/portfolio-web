@@ -1,11 +1,11 @@
 ---
 const jobs = [
-  { co: "Royal FC (Dubái)",  role: "Fullstack Developer",    date: "2025-2026", desc: "Jugué una temporada en un club de fútbol en Dubai. El proceso para contratar pruebas de captación era por WhatsApp, tediosa y sin control. Le comenté al presidente que podía ofrecerle una solución. Acabé siendo responsable IT del club y construyendo el sistema completo: paquetes de pruebas, formularios, pagos con Stripe, un dashboard para que administración gestionara todo sin tocar el móvil." },
-  { co: "TORSA Mining",  role: "Fullstack Developer",    date: "2025", desc: "Trabajé en un equipo mundial y multidisciplinar construyendo interfaces críticas de monitorización de dispositivos, anomalías y alertas en tiempo real vía middleware especializado. En el sector de la minería, donde un fallo en el monitoreo no es un bug, es un riesgo real." },
-  { co: "Help Global Consulting",  role: "Fullstack Developer", date: "2024-2025",    desc: "Entré cuando el MVP ya estaba corriendo, construido en tiempo récord, con toda la deuda técnica que eso implica. Queries con N+1, componentes inestables, sin testing, sin una dirección técnica clara. Ahí entendí de verdad cómo funciona esto por dentro. No solo arreglábamos código, participábamos en decisiones de negocio y de producto. Eso cambia cómo piensas como developer" },
+  { co: "Royal FC (Dubái)",  role: "Fullstack Developer",    date: "2025-2026", desc: "El proceso para contratar pruebas de captación era por WhatsApp, tediosa y sin control. Le ofrecí al club una solución. Acabé siendo responsable IT del club y construyendo el sistema completo: paquetes de pruebas, formularios, pagos con Stripe, un dashboard para que administración gestionara todo de forma centralizada." },
+  { co: "TORSA Mining",  role: "Fullstack Developer",    date: "2025", desc: "Trabajé en un equipo mundial y multidisciplinar construyendo interfaces críticas de monitorización de dispositivos, anomalías y alertas en tiempo real vía middleware personalizado para cada dispositivo. En el sector de la minería, donde un fallo en el monitoreo no es un bug, es un riesgo real, desarrolle habilidades de testing e integridad del código." },
+  { co: "Help Global Consulting",  role: "Fullstack Developer", date: "2024-2025",    desc: "Entré cuando el MVP ya estaba corriendo, construido en tiempo récord, con toda la deuda técnica que eso implica. Queries con N+1, componentes inestables, sin testing, sin una dirección técnica clara. Ahí entendí de verdad cómo funciona esto por dentro. No solo arreglábamos código, participábamos en decisiones de negocio y de producto." },
   { co: "Cargestion",  role: "Fullstack Developer",           date: "2024",    desc: "Mi primera tarea fue entender la arquitectura antes de tocar nada, cada cliente tenía su propia base de datos y un fallo en producción afectaba contratos reales, multas, reservas activas.Desarrollé funcionalidades para visualización de datos y gestión de la API en Laravel. Un software que no puede fallar porque detrás hay un coche alquilado y un cliente esperando." },
 ];
-const tags = ["Laravel", "Vue 3", "MySQL", "Inertia", "Docker"];
+const tags = ["Laravel", "Vue 3", "MySQL", "Docker"];
 ---
 <section class="work" id="work">
   <div class="wrap">
@@ -27,9 +27,9 @@ const tags = ["Laravel", "Vue 3", "MySQL", "Inertia", "Docker"];
             Area<span class="orange">Soccer</span>
           </h3>
           <p class="featured-desc reveal d1">
-            Plataforma web para la gestión y seguimiento de ligas de fútbol.
+            Plataforma web para la organización de equipos de futbol.
             Sistema completo con gestión de equipos, jugadores, resultados
-            y estadísticas en tiempo real.
+            y estadísticas en tiempo real conectadas con datos oficiales.
           </p>
           <div class="tag-row reveal d2">
             {tags.map(t => <span class="tag mono small">{t}</span>)}
@@ -39,9 +39,8 @@ const tags = ["Laravel", "Vue 3", "MySQL", "Inertia", "Docker"];
             <svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 8 H14 M10 4 L14 8 L10 12" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
           </a>
           <div class="featured-numbers reveal d4">
-            <div><span class="display">2.4k</span><span class="mono small muted">USUARIOS</span></div>
+            <div><span class="display">100</span><span class="mono small muted">USUARIOS</span></div>
             <div><span class="display">98<small>%</small></span><span class="mono small muted">UPTIME</span></div>
-            <div><span class="display">12</span><span class="mono small muted">LIGAS</span></div>
           </div>
         </div>
 
