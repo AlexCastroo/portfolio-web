@@ -8,6 +8,7 @@ const t = useTranslations(lang);
 
 const esUrl = '/';
 const enUrl = '/en/';
+const servicesUrl = lang === 'es' ? '/servicios' : '/en/servicios';
 ---
 
 <header class="nav" id="site-nav">
@@ -21,6 +22,7 @@ const enUrl = '/en/';
       <a href="#stack">{t('nav.stack')}</a>
       <a href="#work">{t('nav.work')}</a>
       <a href="#contact">{t('nav.contact')}</a>
+      <a href={servicesUrl} class="nav-services-link mono small">{t('nav.services')} ↗</a>
     </nav>
     <div class="nav-right">
       <div class="lang-switch mono small">
@@ -43,6 +45,7 @@ const enUrl = '/en/';
     <a href="#stack" class="nav-mobile-link">{t('nav.stack')}</a>
     <a href="#work" class="nav-mobile-link">{t('nav.work')}</a>
     <a href="#contact" class="nav-mobile-link">{t('nav.contact')}</a>
+    <a href={servicesUrl} class="nav-mobile-link nav-services-link">{t('nav.services')} ↗</a>
     <div class="lang-switch mono small">
       <a href={esUrl} class:list={['lang-opt', { 'lang-active': lang === 'es' }]}>ES</a>
       <a href={enUrl} class:list={['lang-opt', { 'lang-active': lang === 'en' }]}>EN</a>
@@ -54,6 +57,20 @@ const enUrl = '/en/';
   .nav-right {
     display: flex; align-items: center; gap: 12px;
   }
+  .nav-services-link {
+    color: var(--accent) !important;
+    border: 1px solid rgba(255,91,31,0.3);
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 10px !important;
+    letter-spacing: 0.1em;
+    transition: background .2s ease, border-color .2s ease;
+  }
+  .nav-services-link:hover {
+    background: rgba(255,91,31,0.1);
+    border-color: var(--accent);
+  }
+  .nav-services-link::after { display: none !important; }
 </style>
 
 <script>

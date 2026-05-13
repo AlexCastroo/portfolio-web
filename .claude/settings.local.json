@@ -5,7 +5,8 @@
       "WebFetch(domain:localhost)",
       "Bash(cp -r fumbling-field/src/. src/)",
       "Bash(cp -r fumbling-field/public/. public/)",
-      "Bash(cp -r fumbling-field/.vscode/. .vscode/)"
+      "Bash(cp -r fumbling-field/.vscode/. .vscode/)",
+      "Bash(npx astro *)"
     ]
   }
 }

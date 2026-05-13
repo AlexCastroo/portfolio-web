@@ -3,12 +3,17 @@ import type { Lang } from '../i18n/ui';
 
 interface Props {
   lang: Lang;
+  title?: string;
+  description?: string;
 }
 
-const { lang } = Astro.props;
-const description = lang === 'es'
-  ? 'Desarrollador fullstack especializado en Laravel y ecosistemas PHP. Construyo productos web de alto rendimiento.'
-  : 'Fullstack developer specialized in Laravel and PHP ecosystems. Building high-performance web products.';
+const {
+  lang,
+  title = 'Alex Castro — Fullstack Developer',
+  description = lang === 'es'
+    ? 'Desarrollador fullstack especializado en Laravel y ecosistemas PHP. Construyo productos web de alto rendimiento.'
+    : 'Fullstack developer specialized in Laravel and PHP ecosystems. Building high-performance web products.',
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -19,10 +24,24 @@ const description = lang === 'es'
   <link rel="icon" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="generator" content={Astro.generator} />
-  <title>Alex Castro — Fullstack Developer</title>
+  <title>{title}</title>
   <meta name="description" content={description} />
+  <meta name="author" content="Alex Castro" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href={Astro.url.href} />
   <link rel="alternate" hreflang="es" href="/" />
   <link rel="alternate" hreflang="en" href="/en/" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <!-- Extra head slot (JSON-LD, etc.) -->
+  <slot name="head" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
