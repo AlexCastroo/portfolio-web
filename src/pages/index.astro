@@ -6,9 +6,30 @@ import About from '../components/About.astro';
 import Stack from '../components/Stack.astro';
 import Work from '../components/Work.astro';
 import Contact from '../components/Contact.astro';
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Alex Castro",
+  "jobTitle": "Desarrollador Fullstack Freelance",
+  "url": "https://alexcastro.dev",
+  "sameAs": [
+    "https://www.linkedin.com/in/alexcastroecija/",
+    "https://github.com/AlexCastroo"
+  ],
+  "knowsAbout": ["Laravel", "PHP", "Vue.js", "MySQL", "Docker", "Desarrollo Web"],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "email": "castroecija.alejandro@gmail.com"
+  }
+});
 ---
 
-<Layout lang="es">
+<Layout lang="es" hreflangEs="/" hreflangEn="/en/">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={jsonLd} />
+  </Fragment>
   <Nav lang="es" />
   <main>
     <Hero lang="es" />

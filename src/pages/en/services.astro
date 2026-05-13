@@ -1,8 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { useTranslations } from '../i18n/utils';
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../i18n/utils';
 
-const lang = 'es' as const;
+const lang = 'en' as const;
 const t = useTranslations(lang);
 
 const steps = [
@@ -55,19 +55,19 @@ const jsonLd = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Alex Castro",
-  "jobTitle": "Desarrollador Fullstack Freelance",
+  "jobTitle": "Fullstack Freelance Developer",
   "url": "https://alexcastro.dev",
   "description": t('sv.meta.desc'),
   "sameAs": [
     "https://www.linkedin.com/in/alexcastroecija/",
     "https://github.com/AlexCastroo"
   ],
-  "knowsAbout": ["Laravel", "PHP", "Desarrollo Web", "Tiendas Online", "Automatización IA", "E-commerce"],
+  "knowsAbout": ["Laravel", "PHP", "Web Development", "Online Store", "AI Automation", "E-commerce"],
   "makesOffer": [
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Página Web", "description": t('sv.svc1.desc') } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tienda Online", "description": t('sv.svc2.desc') } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automatización IA", "description": t('sv.svc3.desc') } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desarrollo a Medida", "description": t('sv.svc4.desc') } }
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website", "description": t('sv.svc1.desc') } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Online Store", "description": t('sv.svc2.desc') } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Automation", "description": t('sv.svc3.desc') } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Development", "description": t('sv.svc4.desc') } }
   ]
 });
 
@@ -75,8 +75,8 @@ const breadcrumbLd = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://alexcastro.dev" },
-    { "@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://alexcastro.dev/servicios" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alexcastro.dev/en/" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://alexcastro.dev/en/services" }
   ]
 });
 ---
@@ -88,39 +88,34 @@ const breadcrumbLd = JSON.stringify({
   </Fragment>
 <main>
 
-<!-- ══ NAV ══════════════════════════════════════════════════ -->
 <header class="sn">
   <div class="sn-inner">
-    <a href="/" class="sn-back mono small">{t('sv.nav.back')}</a>
-    <a href="/" class="sn-brand mono">Alex Castro <span class="sn-muted">— dev</span></a>
+    <a href="/en/" class="sn-back mono small">{t('sv.nav.back')}</a>
+    <a href="/en/" class="sn-brand mono">Alex Castro <span class="sn-muted">— dev</span></a>
     <div class="sn-right">
       <div class="lang-switch mono small">
-        <a href="/servicios" class="lang-opt lang-active">ES</a>
-        <a href="/en/services" class="lang-opt">EN</a>
+        <a href="/servicios" class="lang-opt">ES</a>
+        <a href="/en/services" class="lang-opt lang-active">EN</a>
       </div>
       <a href={waUrl} class="sn-cta">{t('sv.nav.cta')}</a>
     </div>
   </div>
 </header>
 
-<!-- ══ HERO ══════════════════════════════════════════════════ -->
 <section class="sh" id="top">
   <div class="sh-wrap">
     <div class="sh-eyebrow mono small">{t('sv.hero.eyebrow')}</div>
-
     <h1 class="sh-title">
       <span class="sh-pre">{t('sv.hero.pre')}</span>
       <em class="sh-hl serif-it">{t('sv.hero.hl')}</em>
       <span class="sh-post">{t('sv.hero.post')}</span>
     </h1>
-
     <div class="sh-slide">
       <p class="sh-s1">{t('sv.hero.slide1')}</p>
       <p class="sh-s2">{t('sv.hero.slide2')}</p>
       <p class="sh-s3">{t('sv.hero.slide3')}</p>
       <p class="sh-s4 orange">{t('sv.hero.slide4')}</p>
     </div>
-
     <div class="sh-actions">
       <a href={waUrl} class="sh-cta-btn magnetic">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A7.7 7.7 0 0 0 4.7 16l-.9 3.3 3.4-.9a7.7 7.7 0 0 0 11.6-6.6 7.6 7.6 0 0 0-1.2-5.5zM12 18.5a6.4 6.4 0 0 1-3.3-.9l-.2-.1-2 .5.5-2-.1-.2A6.4 6.4 0 1 1 12 18.5zm3.5-4.8c-.2-.1-1.1-.6-1.3-.6-.2-.1-.3-.1-.4.1l-.6.7c-.1.1-.2.1-.4 0a5.2 5.2 0 0 1-2.6-2.2c-.2-.3.2-.3.5-1 0-.1 0-.2-.1-.3l-.6-1.4c-.2-.4-.3-.3-.4-.3h-.4c-.1 0-.3 0-.5.2-.2.2-.6.6-.6 1.5s.7 1.7.8 1.8c.1.1 1.3 2 3.1 2.8 1.1.5 1.5.5 2.1.4.3 0 1.1-.5 1.3-.9.1-.4.1-.8.1-.9-.1-.1-.2-.1-.4-.2z"/></svg>
@@ -128,7 +123,6 @@ const breadcrumbLd = JSON.stringify({
         <svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 12 L12 2 M5 2 H12 V9" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
       </a>
     </div>
-
     <div class="sh-scroll mono small">
       <span>SCROLL</span>
       <svg width="10" height="36" viewBox="0 0 10 36"><path d="M5 0 V32 M1 28 L5 32 L9 28" stroke="currentColor" stroke-width="1" fill="none"/></svg>
@@ -137,7 +131,6 @@ const breadcrumbLd = JSON.stringify({
   <div class="sh-glow"></div>
 </section>
 
-<!-- ══ PROBLEMS ══════════════════════════════════════════════ -->
 <section class="sp">
   <div class="sp-inner">
     {[
@@ -154,58 +147,31 @@ const breadcrumbLd = JSON.stringify({
   </div>
 </section>
 
-<!-- ══ SERVICES ═══════════════════════════════════════════════ -->
-<section class="ssv" id="servicios">
+<section class="ssv" id="services">
   <div class="ssv-wrap">
     <div class="ssv-head reveal">
       <span class="mono small muted">{t('sv.services.ref')}</span>
       <h2 class="ssv-title">{t('sv.services.title')}</h2>
       <p class="ssv-sub mono small muted">{t('sv.services.sub')}</p>
     </div>
-
-    <!-- 3 standard services -->
     <div class="ssv-grid">
       {([
-        {
-          badge: t('sv.svc1.badge'), title: t('sv.svc1.title'),
-          hook: t('sv.svc1.hook'), desc: t('sv.svc1.desc'),
-          features: [t('sv.svc1.f1'), t('sv.svc1.f2'), t('sv.svc1.f3')],
-          cta: t('sv.svc1.cta'),
-        },
-        {
-          badge: t('sv.svc2.badge'), title: t('sv.svc2.title'),
-          hook: t('sv.svc2.hook'), desc: t('sv.svc2.desc'),
-          features: [t('sv.svc2.f1'), t('sv.svc2.f2'), t('sv.svc2.f3')],
-          cta: t('sv.svc2.cta'),
-        },
-        {
-          badge: t('sv.svc3.badge'), title: t('sv.svc3.title'),
-          hook: t('sv.svc3.hook'), desc: t('sv.svc3.desc'),
-          features: [t('sv.svc3.f1'), t('sv.svc3.f2'), t('sv.svc3.f3')],
-          cta: t('sv.svc3.cta'),
-        },
+        { badge: t('sv.svc1.badge'), title: t('sv.svc1.title'), hook: t('sv.svc1.hook'), desc: t('sv.svc1.desc'), features: [t('sv.svc1.f1'), t('sv.svc1.f2'), t('sv.svc1.f3')], cta: t('sv.svc1.cta') },
+        { badge: t('sv.svc2.badge'), title: t('sv.svc2.title'), hook: t('sv.svc2.hook'), desc: t('sv.svc2.desc'), features: [t('sv.svc2.f1'), t('sv.svc2.f2'), t('sv.svc2.f3')], cta: t('sv.svc2.cta') },
+        { badge: t('sv.svc3.badge'), title: t('sv.svc3.title'), hook: t('sv.svc3.hook'), desc: t('sv.svc3.desc'), features: [t('sv.svc3.f1'), t('sv.svc3.f2'), t('sv.svc3.f3')], cta: t('sv.svc3.cta') },
       ] as const).map((svc, i) => (
         <div class="ssv-card reveal" style={`transition-delay: ${i * 0.1}s`}>
-          <div class="ssv-card-top">
-            <span class="ssv-badge mono small">{svc.badge}</span>
-          </div>
+          <div class="ssv-card-top"><span class="ssv-badge mono small">{svc.badge}</span></div>
           <h3 class="ssv-card-title">{svc.title}</h3>
           <p class="ssv-card-hook orange">{svc.hook}</p>
           <p class="ssv-card-desc">{svc.desc}</p>
           <ul class="ssv-card-list">
-            {svc.features.map(f => (
-              <li><span class="ssv-check">✓</span><span>{f}</span></li>
-            ))}
+            {svc.features.map(f => (<li><span class="ssv-check">✓</span><span>{f}</span></li>))}
           </ul>
-          <a href={waUrl} class="ssv-card-cta magnetic">
-            <span>{svc.cta}</span>
-            <svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 12 L12 2 M5 2 H12 V9" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-          </a>
+          <a href={waUrl} class="ssv-card-cta magnetic"><span>{svc.cta}</span><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 12 L12 2 M5 2 H12 V9" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
         </div>
       ))}
     </div>
-
-    <!-- Featured: Desarrollo a medida -->
     <div class="ssv-ft reveal d2">
       <div class="ssv-ft-left">
         <span class="ssv-ft-eyebrow mono small orange">{t('sv.svc4.eyebrow')}</span>
@@ -220,20 +186,14 @@ const breadcrumbLd = JSON.stringify({
         <p class="ssv-ft-hook orange">{t('sv.svc4.hook')}</p>
         <p class="ssv-ft-desc">{t('sv.svc4.desc')}</p>
         <ul class="ssv-card-list ssv-ft-list">
-          {[t('sv.svc4.f1'), t('sv.svc4.f2'), t('sv.svc4.f3'), t('sv.svc4.f4')].map(f => (
-            <li><span class="ssv-check">✓</span><span>{f}</span></li>
-          ))}
+          {[t('sv.svc4.f1'), t('sv.svc4.f2'), t('sv.svc4.f3'), t('sv.svc4.f4')].map(f => (<li><span class="ssv-check">✓</span><span>{f}</span></li>))}
         </ul>
-        <a href={waUrl} class="ssv-ft-cta magnetic">
-          <span>{t('sv.svc4.cta')}</span>
-          <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 13 L13 3 M6 3 H13 V10" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
-        </a>
+        <a href={waUrl} class="ssv-ft-cta magnetic"><span>{t('sv.svc4.cta')}</span><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 13 L13 3 M6 3 H13 V10" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ PROOF ══════════════════════════════════════════════════ -->
 <section class="spf">
   <div class="spf-wrap">
     <div class="mono small muted spf-ref reveal">{t('sv.proof.ref')}</div>
@@ -248,7 +208,6 @@ const breadcrumbLd = JSON.stringify({
   </div>
 </section>
 
-<!-- ══ PORTFOLIO ══════════════════════════════════════════════ -->
 <section class="spj">
   <div class="spj-wrap">
     <div class="spj-head reveal">
@@ -284,7 +243,7 @@ const breadcrumbLd = JSON.stringify({
             <p class="spj-card-desc">{p.desc}</p>
             <div class="spj-footer">
               {!p.wip && p.url
-                ? <a href={p.url} target="_blank" rel="noopener" class="spj-link">
+                ? <a href={p.url} target="_blank" rel="noopener noreferrer" class="spj-link">
                     <span>{t('sv.portfolio.viewSite')}</span>
                     <svg width="13" height="13" viewBox="0 0 14 14"><path d="M2 12 L12 2 M5 2 H12 V9" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="square"/></svg>
                   </a>
@@ -300,8 +259,7 @@ const breadcrumbLd = JSON.stringify({
   </div>
 </section>
 
-<!-- ══ PROCESS ════════════════════════════════════════════════ -->
-<section class="spr" id="proceso">
+<section class="spr" id="process">
   <div class="spr-wrap">
     <div class="spr-head reveal">
       <div class="mono small muted">{t('sv.process.ref')}</div>
@@ -324,8 +282,7 @@ const breadcrumbLd = JSON.stringify({
   </div>
 </section>
 
-<!-- ══ FINAL CTA ══════════════════════════════════════════════ -->
-<section class="sc" id="contacto">
+<section class="sc" id="contact">
   <div class="sc-wrap">
     <div class="sc-eyebrow mono small reveal">{t('sv.cta.eyebrow')}</div>
     <h2 class="sc-title reveal d1">{t('sv.cta.title')}</h2>
@@ -350,13 +307,13 @@ const breadcrumbLd = JSON.stringify({
 
 <footer class="sf mono small">
   <span>{t('sv.footer')}</span>
-  <a href="/" class="sf-back">{t('sv.footer.back')} →</a>
+  <a href="/en/" class="sf-back">{t('sv.footer.back')} →</a>
 </footer>
+
 </main>
 </Layout>
 
 <style>
-  /* ─── NAV ─── */
   .sn { position: fixed; top: 0; left: 0; right: 0; z-index: 50; backdrop-filter: blur(14px); background: rgba(10,10,10,0.8); border-bottom: 1px solid var(--line); }
   .sn-inner { max-width: 1400px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
   .sn-back { color: var(--cream-faint); transition: color .2s; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
@@ -366,8 +323,6 @@ const breadcrumbLd = JSON.stringify({
   .sn-right { display: flex; align-items: center; gap: 12px; }
   .sn-cta { padding: 8px 16px; border: 1px solid var(--accent); border-radius: 999px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); transition: all .25s; }
   .sn-cta:hover { background: var(--accent); color: var(--ink); }
-
-  /* ─── HERO ─── */
   .sh { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 120px 0 80px; overflow: hidden; }
   .sh-wrap { max-width: 1400px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; width: 100%; }
   .sh-eyebrow { color: var(--cream-faint); margin-bottom: 32px; font-size: 11px; letter-spacing: .12em; opacity: 0; transform: translateY(16px); animation: fadeUp .7s .2s both; }
@@ -375,20 +330,16 @@ const breadcrumbLd = JSON.stringify({
   .sh-pre  { font-family: 'Archivo'; font-weight: 900; letter-spacing: -0.05em; font-size: clamp(48px, 9vw, 130px); color: var(--cream-dim); opacity: 0; animation: lineUp .9s .35s cubic-bezier(.2,.7,.2,1) both; }
   .sh-hl   { font-family: 'Instrument Serif'; font-style: italic; font-size: clamp(72px, 14vw, 200px); color: var(--accent); opacity: 0; animation: lineUp 1s .5s cubic-bezier(.2,.7,.2,1) both; text-shadow: 0 0 100px rgba(255,91,31,0.45), 0 0 200px rgba(255,91,31,0.2); }
   .sh-post { font-family: 'Archivo'; font-weight: 900; letter-spacing: -0.05em; font-size: clamp(48px, 9vw, 130px); color: var(--cream); opacity: 0; animation: lineUp .9s .65s cubic-bezier(.2,.7,.2,1) both; }
-
-  /* The Slide sub-copy */
   .sh-slide { margin-bottom: 48px; opacity: 0; animation: fadeUp .8s .85s both; }
   .sh-slide p { margin: 0; line-height: 1.15; }
-  .sh-s1 { font-size: clamp(20px, 2.2vw, 28px); color: var(--cream-dim); font-weight: 400; }
+  .sh-s1 { font-size: clamp(20px, 2.2vw, 28px); color: var(--cream-dim); }
   .sh-s2 { font-size: clamp(20px, 2.2vw, 28px); color: var(--cream); font-weight: 600; margin-bottom: 12px; }
   .sh-s3 { font-size: clamp(14px, 1.4vw, 18px); color: var(--cream-faint); }
   .sh-s4 { font-size: clamp(14px, 1.4vw, 18px); font-weight: 600; }
-
   .sh-actions { opacity: 0; animation: fadeUp .8s 1s both; }
   .sh-cta-btn { display: inline-flex; align-items: center; gap: 12px; padding: 18px 32px; border-radius: 999px; background: var(--cream); color: var(--ink); font-family: 'Archivo'; font-weight: 700; font-size: 15px; letter-spacing: .04em; text-transform: uppercase; transition: background .3s, color .3s; }
   .sh-cta-btn:hover { background: var(--accent); color: var(--ink); }
   .sh-scroll { position: absolute; bottom: 40px; left: 24px; display: flex; align-items: center; gap: 10px; color: var(--cream-faint); opacity: 0; animation: fadeUp .8s 1.3s both; }
-  /* Dot grid behind hero */
   .sh::before {
     content: '';
     position: absolute; inset: 0; z-index: 1; pointer-events: none;
@@ -398,13 +349,10 @@ const breadcrumbLd = JSON.stringify({
     -webkit-mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, black 20%, transparent 100%);
   }
   .sh-glow { position: absolute; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(ellipse 55% 65% at 82% 38%, rgba(255,91,31,0.14) 0%, transparent 65%), radial-gradient(ellipse 30% 40% at 10% 70%, rgba(255,91,31,0.06) 0%, transparent 65%); }
-
-  /* ─── PROBLEMS ─── */
   .sp { padding: 80px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--ink-2); }
   .sp-inner { max-width: 1400px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1fr; }
   @media (min-width: 900px) { .sp-inner { grid-template-columns: repeat(3, 1fr); } }
   .sp-card { padding: 48px 40px; border-bottom: 1px solid var(--line); position: relative; overflow: hidden; }
-  /* Decorative background number per card */
   .sp-card::before {
     position: absolute; top: -10px; right: 20px;
     font-family: 'Archivo'; font-weight: 900; font-size: 130px; line-height: 1;
@@ -417,55 +365,29 @@ const breadcrumbLd = JSON.stringify({
   .sp-num { color: var(--accent); margin-bottom: 24px; font-size: 11px; letter-spacing: .12em; }
   .sp-stat { font-family: 'Archivo'; font-weight: 900; font-size: clamp(20px, 2.6vw, 34px); letter-spacing: -0.03em; line-height: 1.1; color: var(--cream); margin: 0 0 12px; }
   .sp-sub { color: var(--cream-faint); font-size: 11px; letter-spacing: .06em; margin: 0; line-height: 1.6; }
-
-  /* ─── SERVICES ─── */
   .ssv { padding: 100px 0; }
   .ssv-wrap { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
   .ssv-head { margin-bottom: 56px; }
   .ssv-title { font-family: 'Archivo'; font-weight: 900; font-size: clamp(40px, 5.5vw, 80px); letter-spacing: -0.04em; line-height: .9; margin: 10px 0 8px; color: var(--cream); }
   .ssv-sub { margin: 0; }
-
-  /* 3-col service cards */
   .ssv-grid { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-bottom: 1px; }
   @media (min-width: 768px) { .ssv-grid { grid-template-columns: repeat(3, 1fr); } }
-  .ssv-card { background: var(--ink); padding: 48px 36px; display: flex; flex-direction: column; gap: 0; transition: background .3s, box-shadow .3s; position: relative; overflow: hidden; }
-  /* Gradient sweep on top edge on hover */
-  .ssv-card::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-    background: linear-gradient(90deg, var(--accent) 0%, rgba(255,91,31,0) 85%);
-    transform: scaleX(0); transform-origin: left;
-    transition: transform .5s cubic-bezier(.2,.7,.2,1);
-  }
+  .ssv-card { background: var(--ink); padding: 48px 36px; display: flex; flex-direction: column; transition: background .3s, box-shadow .3s; position: relative; overflow: hidden; }
+  .ssv-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent) 0%, rgba(255,91,31,0) 85%); transform: scaleX(0); transform-origin: left; transition: transform .5s cubic-bezier(.2,.7,.2,1); }
   .ssv-card:hover::before { transform: scaleX(1); }
   .ssv-card:hover { background: var(--ink-2); box-shadow: inset 0 0 80px rgba(255,91,31,0.04); }
   .ssv-card-top { margin-bottom: 20px; }
   .ssv-badge { color: var(--accent); font-size: 10px; letter-spacing: .14em; border: 1px solid rgba(255,91,31,.3); padding: 3px 8px; border-radius: 2px; display: inline-block; }
   .ssv-card-title { font-family: 'Archivo'; font-weight: 900; font-size: clamp(22px, 2.2vw, 30px); letter-spacing: -0.03em; line-height: 1; margin: 0 0 10px; color: var(--cream); }
-  .ssv-card-hook { font-size: 13px; font-weight: 600; margin: 0 0 16px; letter-spacing: .01em; }
+  .ssv-card-hook { font-size: 13px; font-weight: 600; margin: 0 0 16px; }
   .ssv-card-desc { font-size: clamp(13px, 1.1vw, 15px); line-height: 1.6; color: var(--cream-dim); margin: 0 0 28px; flex: 1; }
   .ssv-card-list { list-style: none; padding: 0; margin: 0 0 32px; display: flex; flex-direction: column; gap: 10px; }
   .ssv-card-list li { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--cream-dim); }
   .ssv-check { color: var(--accent); font-weight: 700; font-size: 14px; flex-shrink: 0; }
   .ssv-card-cta { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 999px; border: 1px solid var(--cream-dim); font-family: 'Archivo'; font-weight: 600; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--cream); transition: all .3s; margin-top: auto; width: fit-content; }
   .ssv-card-cta:hover { border-color: var(--accent); color: var(--accent); }
-
-  /* Featured Desarrollo a Medida */
-  .ssv-ft {
-    border: 1px solid var(--accent);
-    border-top: 3px solid var(--accent);
-    background: linear-gradient(135deg, rgba(255,91,31,0.07) 0%, var(--ink) 55%);
-    padding: 56px 48px;
-    display: grid; grid-template-columns: 1fr;
-    gap: 40px;
-    box-shadow: 0 0 0 1px rgba(255,91,31,0.15), 0 24px 80px rgba(255,91,31,0.07);
-    transition: box-shadow .4s, transform .4s;
-    position: relative; overflow: hidden;
-  }
-  .ssv-ft::after {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none;
-    background: radial-gradient(ellipse 60% 60% at 90% 10%, rgba(255,91,31,0.06) 0%, transparent 60%);
-  }
+  .ssv-ft { border: 1px solid var(--accent); border-top: 3px solid var(--accent); background: linear-gradient(135deg, rgba(255,91,31,0.07) 0%, var(--ink) 55%); padding: 56px 48px; display: grid; grid-template-columns: 1fr; gap: 40px; box-shadow: 0 0 0 1px rgba(255,91,31,0.15), 0 24px 80px rgba(255,91,31,0.07); transition: box-shadow .4s, transform .4s; position: relative; overflow: hidden; }
+  .ssv-ft::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; background: radial-gradient(ellipse 60% 60% at 90% 10%, rgba(255,91,31,0.06) 0%, transparent 60%); }
   .ssv-ft:hover { box-shadow: 0 0 0 1px rgba(255,91,31,0.4), 0 30px 100px rgba(255,91,31,0.14); transform: translateY(-3px); }
   @media (min-width: 900px) { .ssv-ft { grid-template-columns: 0.8fr 1fr; gap: 60px; align-items: start; } }
   .ssv-ft-eyebrow { display: block; margin-bottom: 12px; font-size: 10px; letter-spacing: .18em; }
@@ -478,27 +400,18 @@ const breadcrumbLd = JSON.stringify({
   .ssv-ft-list li { font-size: 14px; }
   .ssv-ft-cta { display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; border-radius: 999px; background: var(--accent); color: var(--ink); font-family: 'Archivo'; font-weight: 700; font-size: 14px; letter-spacing: .04em; text-transform: uppercase; transition: all .3s; width: fit-content; }
   .ssv-ft-cta:hover { background: var(--cream); transform: translateY(-2px); }
-
-  /* ─── PROOF ─── */
   .spf { padding: 100px 0; border-top: 1px solid var(--line); }
   .spf-wrap { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
   .spf-ref { margin-bottom: 48px; }
   .spf-grid { display: grid; grid-template-columns: 1fr; gap: 32px 60px; }
   @media (min-width: 600px) { .spf-grid { grid-template-columns: repeat(3, 1fr); } }
   .spf-stat { display: flex; flex-direction: column; gap: 8px; position: relative; overflow: hidden; }
-  /* Huge decorative bg number behind each stat */
-  .spf-stat::before {
-    position: absolute; bottom: -20px; right: -10px;
-    font-family: 'Archivo'; font-weight: 900; font-size: 200px; line-height: 1;
-    color: rgba(255,255,255,0.025); pointer-events: none; user-select: none;
-  }
+  .spf-stat::before { position: absolute; bottom: -20px; right: -10px; font-family: 'Archivo'; font-weight: 900; font-size: 200px; line-height: 1; color: rgba(255,255,255,0.025); pointer-events: none; user-select: none; }
   .spf-stat:nth-child(1)::before { content: "6+"; }
   .spf-stat:nth-child(2)::before { content: "2"; }
   .spf-stat:nth-child(3)::before { content: "3"; }
   .spf-num { font-size: clamp(72px, 10vw, 120px); color: var(--cream); line-height: .85; }
   .spf-lbl { line-height: 1.4; }
-
-  /* ─── PROCESS ─── */
   .spr { padding: 100px 0; background: var(--ink-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
   .spr-wrap { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
   .spr-head { margin-bottom: 64px; }
@@ -513,8 +426,6 @@ const breadcrumbLd = JSON.stringify({
   .spr-step:last-child .spr-step-content { padding-bottom: 0; }
   .spr-step-title { font-family: 'Archivo'; font-weight: 700; font-size: clamp(20px, 2vw, 28px); letter-spacing: -0.02em; margin: 8px 0 10px; color: var(--cream); }
   .spr-step-desc { font-size: clamp(14px, 1.1vw, 16px); line-height: 1.65; color: var(--cream-dim); margin: 0; max-width: 46ch; }
-
-  /* ─── FINAL CTA ─── */
   .sc { padding: 120px 0; background: linear-gradient(to bottom, var(--ink) 0%, #0d0b08 100%); text-align: center; position: relative; overflow: hidden; }
   .sc-wrap { max-width: 900px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
   .sc-eyebrow { color: var(--accent); margin-bottom: 24px; }
@@ -531,37 +442,28 @@ const breadcrumbLd = JSON.stringify({
   .sc-btn-ghost { background: transparent; color: var(--cream); border: 1px solid var(--cream-dim); }
   .sc-btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); }
   .sc-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 800px; height: 600px; background: radial-gradient(ellipse, rgba(255,91,31,0.12) 0%, transparent 70%); pointer-events: none; z-index: 1; animation: glow-pulse 5s ease-in-out infinite; }
-
-  /* ─── FOOTER ─── */
   .sf { padding: 28px 24px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--line); color: var(--cream-faint); max-width: 1400px; margin: 0 auto; }
   .sf-back { color: var(--cream-faint); transition: color .2s; }
   .sf-back:hover { color: var(--accent); }
-
-  /* ─── PORTFOLIO ─── */
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity: 1; transform: none; }
+  .reveal.d1 { transition-delay: .08s; }
+  .reveal.d2 { transition-delay: .18s; }
+  .reveal.d3 { transition-delay: .28s; }
+  .magnetic { transition: transform .5s cubic-bezier(.2,.7,.2,1); }
   .spj { padding: 100px 0; border-top: 1px solid var(--line); }
   .spj-wrap { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
   .spj-head { margin-bottom: 56px; }
   .spj-title { font-family: 'Archivo'; font-weight: 900; font-size: clamp(40px, 5.5vw, 80px); letter-spacing: -0.04em; line-height: .9; margin: 10px 0 8px; color: var(--cream); }
   .spj-sub { margin: 0; }
-
   .spj-grid { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
   @media (min-width: 768px) { .spj-grid { grid-template-columns: repeat(3, 1fr); } }
-
   .spj-card { background: var(--ink); display: flex; flex-direction: column; transition: background .3s, box-shadow .35s; }
-  .spj-card:hover { background: var(--ink-2); box-shadow: inset 0 0 0 1px rgba(255,91,31,0.2), 0 20px 60px rgba(0,0,0,0.3); }
-  .spj-card:hover .spj-img img,
-  .spj-card:hover .spj-placeholder { filter: brightness(1.08); }
-
-  .spj-img {
-    position: relative;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    background: color-mix(in srgb, var(--pj-color) 10%, var(--ink));
-    border-bottom: 1px solid var(--line);
-  }
+  .spj-card:hover { box-shadow: inset 0 0 0 1px rgba(255,91,31,0.2), 0 20px 60px rgba(0,0,0,0.3); }
+  .spj-card:hover { background: var(--ink-2); }
+  .spj-img { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: color-mix(in srgb, var(--pj-color) 10%, var(--ink)); border-bottom: 1px solid var(--line); }
   .spj-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s cubic-bezier(.2,.7,.2,1); }
   .spj-card:hover .spj-img img { transform: scale(1.03); }
-
   .spj-placeholder { width: 100%; height: 100%; padding: 20px 22px; display: flex; flex-direction: column; gap: 12px; }
   .spj-ph-dots { display: flex; gap: 6px; }
   .spj-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--pj-color); opacity: 0.5; }
@@ -570,15 +472,7 @@ const breadcrumbLd = JSON.stringify({
   .spj-ph-bar.b2 { width: 48%; opacity: 0.15; }
   .spj-ph-bar.b3 { width: 32%; opacity: 0.09; }
   .spj-ph-mock { flex: 1; border-radius: 4px; background: var(--pj-color); opacity: 0.06; margin-top: 4px; }
-
-  .spj-badge-wip {
-    position: absolute; top: 12px; right: 12px;
-    background: rgba(0,0,0,0.75); color: #f59e0b;
-    border: 1px solid rgba(245,158,11,0.4);
-    padding: 3px 9px; border-radius: 2px;
-    font-size: 9px; letter-spacing: .12em;
-  }
-
+  .spj-badge-wip { position: absolute; top: 12px; right: 12px; background: rgba(0,0,0,0.75); color: #f59e0b; border: 1px solid rgba(245,158,11,0.4); padding: 3px 9px; border-radius: 2px; font-size: 9px; letter-spacing: .12em; }
   .spj-body { padding: 28px 30px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
   .spj-tags { display: flex; flex-wrap: wrap; gap: 6px; }
   .spj-tag { font-size: 9px; letter-spacing: .1em; color: var(--cream-faint); border: 1px solid var(--line); padding: 2px 7px; border-radius: 2px; }
@@ -588,27 +482,10 @@ const breadcrumbLd = JSON.stringify({
   .spj-link { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: .04em; transition: gap .2s; }
   .spj-link:hover { gap: 11px; }
   .spj-nda { font-size: 11px; color: var(--cream-faint); letter-spacing: .08em; }
-
-  /* ─── ANIMATIONS ─── */
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-  @keyframes lineUp { from { opacity: 0; transform: translateY(80px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes glow-pulse { 0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); } 50% { opacity: 1; transform: translate(-50%, -50%) scale(1.18); } }
-  .reveal { opacity: 0; transform: translateY(32px); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
-  .reveal.in { opacity: 1; transform: none; }
-  .reveal.d1 { transition-delay: .08s; }
-  .reveal.d2 { transition-delay: .18s; }
-  .reveal.d3 { transition-delay: .28s; }
-  .magnetic { transition: transform .5s cubic-bezier(.2,.7,.2,1); }
-
-  /* ─── MOBILE ─── */
-  @media (max-width: 599px) {
-    .sh { padding: 100px 0 60px; }
-    .sp-card { padding: 36px 24px; }
-    .ssv-card { padding: 36px 24px; }
-    .ssv-ft { padding: 36px 24px; }
-    .sc-actions { flex-direction: column; align-items: center; }
-    .sc-btn { width: 100%; justify-content: center; max-width: 340px; }
-  }
+  @keyframes lineUp { from { opacity: 0; transform: translateY(80px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 599px) { .sh { padding: 100px 0 60px; } .sp-card { padding: 36px 24px; } .ssv-card { padding: 36px 24px; } .ssv-ft { padding: 36px 24px; } .sc-actions { flex-direction: column; align-items: center; } .sc-btn { width: 100%; justify-content: center; max-width: 340px; } }
 </style>
 
 <script>
@@ -617,7 +494,6 @@ const breadcrumbLd = JSON.stringify({
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // Magnetic buttons
   document.querySelectorAll<HTMLElement>('.magnetic').forEach(btn => {
     btn.addEventListener('mousemove', e => {
       const r = btn.getBoundingClientRect();
@@ -632,7 +508,6 @@ const breadcrumbLd = JSON.stringify({
     });
   });
 
-  // Counter animation
   const counterIO = new IntersectionObserver(entries => {
     entries.forEach(en => {
       if (!en.isIntersecting) return;

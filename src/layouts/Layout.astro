@@ -5,15 +5,25 @@ interface Props {
   lang: Lang;
   title?: string;
   description?: string;
+  hreflangEs?: string;
+  hreflangEn?: string;
+  ogImage?: string;
 }
 
 const {
   lang,
-  title = 'Alex Castro — Fullstack Developer',
+  title = lang === 'es'
+    ? 'Alex Castro — Desarrollador Fullstack Laravel & PHP'
+    : 'Alex Castro — Fullstack Developer Laravel & PHP',
   description = lang === 'es'
     ? 'Desarrollador fullstack especializado en Laravel y ecosistemas PHP. Construyo productos web de alto rendimiento.'
     : 'Fullstack developer specialized in Laravel and PHP ecosystems. Building high-performance web products.',
+  hreflangEs = '/',
+  hreflangEn = '/en/',
+  ogImage = '/og-image.jpg',
 } = Astro.props;
+
+const siteBase = (Astro.site?.href ?? 'https://alexcastro.dev').replace(/\/$/, '');
 ---
 
 <!doctype html>
@@ -29,17 +39,24 @@ const {
   <meta name="author" content="Alex Castro" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href={Astro.url.href} />
-  <link rel="alternate" hreflang="es" href="/" />
-  <link rel="alternate" hreflang="en" href="/en/" />
+  <link rel="alternate" hreflang="es" href={`${siteBase}${hreflangEs}`} />
+  <link rel="alternate" hreflang="en" href={`${siteBase}${hreflangEn}`} />
+  <link rel="alternate" hreflang="x-default" href={`${siteBase}${hreflangEs}`} />
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
+  <meta property="og:url" content={Astro.url.href} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
+  <meta property="og:image" content={`${siteBase}${ogImage}`} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@AlexCastroo" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={`${siteBase}${ogImage}`} />
   <!-- Extra head slot (JSON-LD, etc.) -->
   <slot name="head" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />

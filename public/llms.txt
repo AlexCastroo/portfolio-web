@@ -1,0 +1,27 @@
+# Alex Castro — Fullstack Developer
+
+## Who I am
+Alex Castro is a freelance fullstack developer based in Spain, specialized in Laravel and PHP ecosystems with 6+ years of experience building high-performance web products.
+
+## What I do
+- Web development: custom websites designed to convert visitors into clients
+- E-commerce: full online stores with payment gateway (Stripe), cart, and product management
+- AI automation: automated flows, AI agents, and chatbots tailored to business processes
+- Custom development: bespoke technical solutions for specific business needs
+
+## Stack
+- Backend: PHP, Laravel, MySQL, PostgreSQL, Redis, REST APIs
+- Frontend: Vue.js, React, Tailwind CSS, Inertia.js
+- DevOps: Docker, Linux, Nginx, Git, CI/CD, VPS
+
+## Experience
+- Royal FC Dubai (2025–2026): Built complete IT system for player trial recruitment including Stripe payments and admin dashboard
+- TORSA Mining (2025): Real-time device monitoring interfaces for mining operations in a global team
+- Help Global Consulting (2024–2025): Fullstack development and technical decisions on SaaS product
+- Cargestion (2024): Data visualization and API management for multi-tenant car rental software
+
+## Contact
+- Website: https://alexcastro.dev
+- LinkedIn: https://www.linkedin.com/in/alexcastroecija/
+- GitHub: https://github.com/AlexCastroo
+- Email: castroecija.alejandro@gmail.com
