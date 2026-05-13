@@ -1,23 +1,31 @@
 ---
+import type { Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
 const jobs = [
-  { co: "Royal FC (Dubái)",  role: "Fullstack Developer",    date: "2025-2026", desc: "El proceso para contratar pruebas de captación era por WhatsApp, tediosa y sin control. Le ofrecí al club una solución. Acabé siendo responsable IT del club y construyendo el sistema completo: paquetes de pruebas, formularios, pagos con Stripe, un dashboard para que administración gestionara todo de forma centralizada." },
-  { co: "TORSA Mining",  role: "Fullstack Developer",    date: "2025", desc: "Trabajé en un equipo mundial y multidisciplinar construyendo interfaces críticas de monitorización de dispositivos, anomalías y alertas en tiempo real vía middleware personalizado para cada dispositivo. En el sector de la minería, donde un fallo en el monitoreo no es un bug, es un riesgo real, desarrolle habilidades de testing e integridad del código." },
-  { co: "Help Global Consulting",  role: "Fullstack Developer", date: "2024-2025",    desc: "Entré cuando el MVP ya estaba corriendo, construido en tiempo récord, con toda la deuda técnica que eso implica. Queries con N+1, componentes inestables, sin testing, sin una dirección técnica clara. Ahí entendí de verdad cómo funciona esto por dentro. No solo arreglábamos código, participábamos en decisiones de negocio y de producto." },
-  { co: "Cargestion",  role: "Fullstack Developer",           date: "2024",    desc: "Mi primera tarea fue entender la arquitectura antes de tocar nada, cada cliente tenía su propia base de datos y un fallo en producción afectaba contratos reales, multas, reservas activas.Desarrollé funcionalidades para visualización de datos y gestión de la API en Laravel. Un software que no puede fallar porque detrás hay un coche alquilado y un cliente esperando." },
+  { co: t('work.job1.co'), role: t('work.job1.role'), date: t('work.job1.date'), desc: t('work.job1.desc') },
+  { co: t('work.job2.co'), role: t('work.job2.role'), date: t('work.job2.date'), desc: t('work.job2.desc') },
+  { co: t('work.job3.co'), role: t('work.job3.role'), date: t('work.job3.date'), desc: t('work.job3.desc') },
+  { co: t('work.job4.co'), role: t('work.job4.role'), date: t('work.job4.date'), desc: t('work.job4.desc') },
 ];
 const tags = ["Laravel", "Vue 3", "MySQL", "Docker"];
 ---
+
 <section class="work" id="work">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="mono small muted">— 03 / WORK</div>
-      <div class="mono small muted">PROYECTOS &amp; EXPERIENCIA</div>
+      <div class="mono small muted">{t('work.sectionRef')}</div>
+      <div class="mono small muted">{t('work.sectionLabel')}</div>
     </div>
     <hr class="rule" />
 
     <div class="featured">
       <div class="featured-meta reveal">
-        <span class="mono small muted">PROYECTO DESTACADO</span>
+        <span class="mono small muted">{t('work.featured')}</span>
         <span class="mono small muted">— ⌥ FT</span>
       </div>
 
@@ -26,21 +34,17 @@ const tags = ["Laravel", "Vue 3", "MySQL", "Docker"];
           <h3 class="display-tight featured-title reveal">
             Area<span class="orange">Soccer</span>
           </h3>
-          <p class="featured-desc reveal d1">
-            Plataforma web para la organización de equipos de futbol.
-            Sistema completo con gestión de equipos, jugadores, resultados
-            y estadísticas en tiempo real conectadas con datos oficiales.
-          </p>
+          <p class="featured-desc reveal d1">{t('work.featuredDesc')}</p>
           <div class="tag-row reveal d2">
-            {tags.map(t => <span class="tag mono small">{t}</span>)}
+            {tags.map(tag => <span class="tag mono small">{tag}</span>)}
           </div>
           <a href="#" class="btn-ghost reveal d3" data-hover>
-            <span>Ver proyecto</span>
+            <span>{t('work.seeProject')}</span>
             <svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 8 H14 M10 4 L14 8 L10 12" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
           </a>
           <div class="featured-numbers reveal d4">
-            <div><span class="display">100</span><span class="mono small muted">USUARIOS</span></div>
-            <div><span class="display">98<small>%</small></span><span class="mono small muted">UPTIME</span></div>
+            <div><span class="display">100</span><span class="mono small muted">{t('work.users')}</span></div>
+            <div><span class="display">98<small>%</small></span><span class="mono small muted">{t('work.uptime')}</span></div>
           </div>
         </div>
 
@@ -95,8 +99,8 @@ const tags = ["Laravel", "Vue 3", "MySQL", "Docker"];
 
     <div class="xp">
       <div class="xp-head reveal">
-        <h3 class="display xp-title">Experiencia</h3>
-        <span class="mono small muted">— TIMELINE / 2019 → NOW</span>
+        <h3 class="display xp-title">{t('work.experience')}</h3>
+        <span class="mono small muted">{t('work.timeline')}</span>
       </div>
       <div class="timeline">
         {jobs.map((j, i) => (

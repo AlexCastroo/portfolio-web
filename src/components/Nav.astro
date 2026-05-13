@@ -1,3 +1,15 @@
+---
+import type { Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const esUrl = '/';
+const enUrl = '/en/';
+---
+
 <header class="nav" id="site-nav">
   <div class="wrap nav-row">
     <a href="#top" class="nav-brand">
@@ -5,28 +17,44 @@
       <span class="mono">Alex Castro <span class="muted">— dev</span></span>
     </a>
     <nav class="nav-links">
-      <a href="#about">About</a>
-      <a href="#stack">Stack</a>
-      <a href="#work">Work</a>
-      <a href="#contact">Contact</a>
+      <a href="#about">{t('nav.about')}</a>
+      <a href="#stack">{t('nav.stack')}</a>
+      <a href="#work">{t('nav.work')}</a>
+      <a href="#contact">{t('nav.contact')}</a>
     </nav>
-    <a href="#contact" class="nav-cta">
-      <span>Contáctame</span>
-      <svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 12 L12 2 M5 2 H12 V9" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="square"/></svg>
-    </a>
-    <button class="nav-burger" id="nav-burger" aria-label="menu">
-      <span id="burger-top"></span>
-      <span id="burger-mid"></span>
-      <span id="burger-bot"></span>
-    </button>
+    <div class="nav-right">
+      <div class="lang-switch mono small">
+        <a href={esUrl} class:list={['lang-opt', { 'lang-active': lang === 'es' }]}>ES</a>
+        <a href={enUrl} class:list={['lang-opt', { 'lang-active': lang === 'en' }]}>EN</a>
+      </div>
+      <a href="#contact" class="nav-cta">
+        <span>{t('nav.cta')}</span>
+        <svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 12 L12 2 M5 2 H12 V9" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="square"/></svg>
+      </a>
+      <button class="nav-burger" id="nav-burger" aria-label={t('nav.menuLabel')}>
+        <span id="burger-top"></span>
+        <span id="burger-mid"></span>
+        <span id="burger-bot"></span>
+      </button>
+    </div>
   </div>
   <div class="nav-mobile" id="nav-mobile" style="display:none">
-    <a href="#about" class="nav-mobile-link">About</a>
-    <a href="#stack" class="nav-mobile-link">Stack</a>
-    <a href="#work" class="nav-mobile-link">Work</a>
-    <a href="#contact" class="nav-mobile-link">Contact</a>
+    <a href="#about" class="nav-mobile-link">{t('nav.about')}</a>
+    <a href="#stack" class="nav-mobile-link">{t('nav.stack')}</a>
+    <a href="#work" class="nav-mobile-link">{t('nav.work')}</a>
+    <a href="#contact" class="nav-mobile-link">{t('nav.contact')}</a>
+    <div class="lang-switch mono small">
+      <a href={esUrl} class:list={['lang-opt', { 'lang-active': lang === 'es' }]}>ES</a>
+      <a href={enUrl} class:list={['lang-opt', { 'lang-active': lang === 'en' }]}>EN</a>
+    </div>
   </div>
 </header>
+
+<style>
+  .nav-right {
+    display: flex; align-items: center; gap: 12px;
+  }
+</style>
 
 <script>
   const burger = document.getElementById('nav-burger')!;

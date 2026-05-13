@@ -1,13 +1,18 @@
+---
+import type { Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
 <section class="hero" id="top">
   <div class="wrap">
-    <!-- <div class="hero-meta reveal">
-      <div class="mono small muted">2026 / PORTFOLIO</div>
-    </div> -->
-
     <div class="hero-grid">
       <div class="hero-name">
         <div class="hero-eyebrow mono small reveal d1">
-          <span class="eyebrow-badge orange">FULLSTACK · LARAVEL SPECIALIST</span>
+          <span class="eyebrow-badge orange">{t('hero.badge')}</span>
         </div>
 
         <div class="hero-title-row">
@@ -25,37 +30,32 @@
         <div class="hero-footer">
           <div class="hero-tagline reveal d3">
             <p>
-              Construyendo productos web de alto rendimiento con <span class="serif-it">Laravel</span>
-              y ecosistemas PHP.
+              {t('hero.taglineBefore')} <span class="serif-it">Laravel</span>
+              {t('hero.taglineAfter')}
             </p>
           </div>
 
           <div class="hero-actions reveal d4">
             <a href="#contact" class="btn-primary" data-hover>
-              <span>Contáctame</span>
+              <span>{t('hero.cta')}</span>
               <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 13 L13 3 M6 3 H13 V10" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
             </a>
             <a href="#work" class="btn-ghost" data-hover>
-              Ver proyectos
+              {t('hero.seeProjects')}
             </a>
           </div>
-
-          <!-- <div class="hero-badge mono small reveal d5">
-            <svg width="14" height="14" viewBox="0 0 50 50" fill="none"><path d="M49 14.7L42.5 8.2 28.7 22 25 18.3 18.5 24.8 25 31.3 31.5 24.8 49 14.7zM18 32L25 25 11 25 4 32 18 32z" fill="#FF2D20"/></svg>
-            <span>LARAVEL SPECIALIST</span>
-            <span class="badge-divider">·</span>
-            <span class="muted">v11 · php 8.3</span>
-          </div> -->
         </div>
       </div>
 
       <div class="hero-side">
         <div class="side-stat reveal d3">
           <div class="display side-num">06<span class="orange">+</span></div>
-          <div class="mono small muted side-lbl">YEARS<br/>SHIPPING<br/>CODE</div>
+          <div class="mono small muted side-lbl">
+            {t('hero.yearsLine1')}<br/>{t('hero.yearsLine2')}<br/>{t('hero.yearsLine3')}
+          </div>
         </div>
         <div class="scroll-prompt mono small reveal d5">
-          <span>SCROLL</span>
+          <span>{t('hero.scroll')}</span>
           <svg width="10" height="40" viewBox="0 0 10 40"><path d="M5 0 V36 M1 32 L5 36 L9 32" stroke="currentColor" stroke-width="1" fill="none"/></svg>
         </div>
       </div>

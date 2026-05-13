@@ -1,4 +1,12 @@
-﻿// @ts-check
+// @ts-check
 import { defineConfig } from 'astro/config';
 
-export default defineConfig({});
+export default defineConfig({
+  i18n: {
+    defaultLocale: 'es',
+    locales: ['es', 'en'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
+});
