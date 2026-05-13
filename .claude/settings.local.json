@@ -5,7 +5,14 @@
       "WebFetch(domain:localhost)",
       "Bash(cp -r fumbling-field/src/. src/)",
       "Bash(cp -r fumbling-field/public/. public/)",
-      "Bash(cp -r fumbling-field/.vscode/. .vscode/)"
+      "Bash(cp -r fumbling-field/.vscode/. .vscode/)",
+      "Bash(npx astro *)",
+      "Bash(curl *)",
+      "PowerShell(Add-Type -AssemblyName System.Drawing; $img = [System.Drawing.Image]::FromFile\\(\"C:\\\\Programacion\\\\portfolio-web\\\\public\\\\photo.png\"\\); \"$\\($img.Width\\)x$\\($img.Height\\)\"; $img.Dispose\\(\\))",
+      "PowerShell(Start-Sleep -Seconds 5; try { $r = Invoke-WebRequest -Uri \"http://localhost:4321\" -TimeoutSec 10 -UseBasicParsing; $r.StatusCode } catch { $_.Exception.Message })"
     ]
+  },
+  "enabledPlugins": {
+    "claude-seo@agricidaniel-seo": true
   }
 }

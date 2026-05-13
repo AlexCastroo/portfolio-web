@@ -1,16 +1,24 @@
 ---
+import type { Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
 const groups = [
-  { label: "CORE",             items: ["PHP", "JavaScript", "SQL", "REST APIs", "Web Scraping"], hl: ["PHP"] },
-  { label: "BACKEND",          items: ["Laravel", "MySQL", "PostgreSQL", "Redis", "Eloquent"],   hl: ["Laravel"] },
-  { label: "FRONTEND",         items: ["Vue.js", "React", "Tailwind CSS", "Inertia.js", "HTML/CSS"], hl: [] },
-  { label: "SISTEMAS / DEVOPS",items: ["Docker", "Linux", "Nginx", "Git", "CI/CD", "VPS"],      hl: [] },
+  { labelKey: 'stack.group1' as const, items: ["PHP", "JavaScript", "SQL", "REST APIs", "Web Scraping"], hl: ["PHP"] },
+  { labelKey: 'stack.group2' as const, items: ["Laravel", "MySQL", "PostgreSQL", "Redis", "Eloquent"],   hl: ["Laravel"] },
+  { labelKey: 'stack.group3' as const, items: ["Vue.js", "React", "Tailwind CSS", "Inertia.js", "HTML/CSS"], hl: [] },
+  { labelKey: 'stack.group4' as const, items: ["Docker", "Linux", "Nginx", "Git", "CI/CD", "VPS"],      hl: [] },
 ];
 ---
+
 <section class="stack" id="stack">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="mono small muted">— 02 / STACK</div>
-      <div class="mono small muted">HERRAMIENTAS &amp; TECH</div>
+      <div class="mono small muted">{t('stack.sectionRef')}</div>
+      <div class="mono small muted">{t('stack.sectionLabel')}</div>
     </div>
     <hr class="rule" />
     <h2 class="display stack-title reveal">
@@ -21,14 +29,14 @@ const groups = [
         <div class={`stack-group reveal d${gi + 1}`}>
           <div class="stack-group-head">
             <span class="mono small group-num">0{gi + 1}</span>
-            <span class="mono small group-label">{g.label}</span>
+            <span class="mono small group-label">{t(g.labelKey)}</span>
           </div>
           <ul class="stack-list">
             {g.items.map(it => (
               <li class={g.hl.includes(it) ? "hl" : ""}>
                 <span class="stack-bullet"></span>
                 <span>{it}</span>
-                {g.hl.includes(it) && <span class="mono small spec">SPECIALIST</span>}
+                {g.hl.includes(it) && <span class="mono small spec">{t('stack.specialist')}</span>}
               </li>
             ))}
           </ul>

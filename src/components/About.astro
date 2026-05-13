@@ -1,42 +1,41 @@
 ---
+import type { Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
 const stats = [
-  { n: "06+", l: "AÑOS DE EXPERIENCIA" },
-  { n: "2",  l: "PROYECTOS EN PRODUCCIÓN" },
-  { n: "6+", l: "PROYECTOS PARTICIPADOS" },
-  { n: "03",  l: "PAÍSES DE CLIENTES" },
+  { n: "06+", key: 'about.stat1' as const },
+  { n: "2",   key: 'about.stat2' as const },
+  { n: "6+",  key: 'about.stat3' as const },
+  { n: "03",  key: 'about.stat4' as const },
 ];
 ---
+
 <section class="about" id="about">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="mono small muted">— 01 / ABOUT</div>
-      <div class="mono small muted">SOBRE MÍ</div>
+      <div class="mono small muted">{t('about.sectionRef')}</div>
+      <div class="mono small muted">{t('about.sectionLabel')}</div>
     </div>
     <hr class="rule" />
     <div class="about-grid">
       <div class="about-left">
         <h2 class="display about-title reveal">
-          Más allá del </br><span class="serif-it orange">código</span><span class="orange">.</span><br/>
-          <span class="muted2">construyo productos</span>
+          {t('about.titleBefore')}<br/><span class="serif-it orange">{t('about.titleHighlight')}</span><span class="orange">.</span><br/>
+          <span class="muted2">{t('about.titleAfter')}</span>
         </h2>
-        <p class="about-body reveal d1">
-          Empecé entendiendo cómo funciona y se conecta hardware, redes, máquinas, software. 
-          Y en ese punto me pregunté: ¿y si en vez de conectar herramientas de otros, construyo las mías? Eso me llevó a donde estoy. 
-        </br></br>
-          Trabajo con Laravel ya que me deja resolver problemas reales de negocio de forma integral. 
-          Pero lo que más me define no es qué uso, es que no me detengo en la mitad. 
-          Del diseño al servidor, de la base de datos al usuario final.
-        </p>
-        <p class="about-body reveal d2">
-          Apasionado por el código limpio, la arquitectura sostenible
-          y las soluciones que generan impacto real en el negocio.
-        </p>
+        <p class="about-body reveal d1">{t('about.body1')}</p>
+        <p class="about-body reveal d1">{t('about.body1b')}</p>
+        <p class="about-body reveal d2">{t('about.body2')}</p>
       </div>
       <div class="about-right">
         {stats.map((s, i) => (
           <div class={`stat reveal d${i + 1}`}>
             <div class="display stat-num">{s.n}</div>
-            <div class="mono small muted stat-lbl">{s.l}</div>
+            <div class="mono small muted stat-lbl">{t(s.key)}</div>
           </div>
         ))}
       </div>
