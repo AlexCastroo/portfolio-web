@@ -12,22 +12,22 @@ const steps = [
 ];
 const projects = [
   {
-    img: '',
+    img: '/public/areasoccerapp.webp',
     color: '#ff5b1f',
     title: t('sv.proj1.title'),
     desc: t('sv.proj1.desc'),
-    tags: ['Laravel', 'Vue 3', 'MySQL', 'Docker'],
+    tags: ['DDesarrollo a medida', 'Automatización con IA'],
     url: 'https://areasoccer.app',
     wip: false,
     nda: false,
   },
   {
-    img: '',
+    img: '/public/fee-coffee.webp',
     color: '#3b82f6',
     title: t('sv.proj2.title'),
     desc: t('sv.proj2.desc'),
-    tags: ['Laravel', 'Stripe', 'MySQL', 'Blade'],
-    url: '',
+    tags: ['Sitio Web', 'Menú', 'Whatsapp'],
+    url: 'https://feecoffe.netlify.app/',
     wip: false,
     nda: true,
   },
@@ -36,7 +36,7 @@ const projects = [
     color: '#10b981',
     title: t('sv.proj3.title'),
     desc: t('sv.proj3.desc'),
-    tags: ['Laravel', 'Vue 3', 'WebSockets', 'Docker'],
+    tags: ['Desarrollo a medida', 'Automatización con IA'],
     url: '',
     wip: true,
     nda: false,
@@ -147,7 +147,7 @@ const breadcrumbLd = JSON.stringify({
     ].map((p, i) => (
       <div class="sp-card reveal" style={`transition-delay: ${i * 0.12}s`}>
         <div class="sp-num mono small">{String(i + 1).padStart(2, '0')}</div>
-        <p class="sp-stat">{p.stat}</p>
+        <p class="sp-stat">{p.stat}<span class="orange">.</span></p>
         <p class="sp-sub mono small">{p.sub}</p>
       </div>
     ))}
@@ -187,10 +187,10 @@ const breadcrumbLd = JSON.stringify({
       ] as const).map((svc, i) => (
         <div class="ssv-card reveal" style={`transition-delay: ${i * 0.1}s`}>
           <div class="ssv-card-top">
-            <span class="ssv-badge mono small">{svc.badge}</span>
+            <span class="eyebrow-badge ssv-badge mono small">{svc.badge}</span>
           </div>
           <h3 class="ssv-card-title">{svc.title}</h3>
-          <p class="ssv-card-hook orange">{svc.hook}</p>
+          <p class="ssv-card-hook serif-it orange">{svc.hook}</p>
           <p class="ssv-card-desc">{svc.desc}</p>
           <ul class="ssv-card-list">
             {svc.features.map(f => (
@@ -208,16 +208,16 @@ const breadcrumbLd = JSON.stringify({
     <!-- Featured: Desarrollo a medida -->
     <div class="ssv-ft reveal d2">
       <div class="ssv-ft-left">
-        <span class="ssv-ft-eyebrow mono small orange">{t('sv.svc4.eyebrow')}</span>
-        <span class="ssv-badge mono small">{t('sv.svc4.badge')}</span>
+        <!-- <span class="ssv-ft-eyebrow mono small orange">{t('sv.svc4.eyebrow')}</span> -->
+        <span class="eyebrow-badge ssv-badge mono small">{t('sv.svc4.badge')}</span>
         <h3 class="ssv-ft-title display-tight">
           <span>{t('sv.svc4.title')}</span>
-          <em class="serif-it orange">{t('sv.svc4.title2')}</em>
-          <span>{t('sv.svc4.title3')}</span>
+          <span>{t('sv.svc4.title2')}</span>
+          <em class="serif-it orange">{t('sv.svc4.title3')}</em>
         </h3>
       </div>
       <div class="ssv-ft-right">
-        <p class="ssv-ft-hook orange">{t('sv.svc4.hook')}</p>
+        <p class="ssv-ft-hook orange serif-it">{t('sv.svc4.hook')}</p>
         <p class="ssv-ft-desc">{t('sv.svc4.desc')}</p>
         <ul class="ssv-card-list ssv-ft-list">
           {[t('sv.svc4.f1'), t('sv.svc4.f2'), t('sv.svc4.f3'), t('sv.svc4.f4')].map(f => (
@@ -234,7 +234,7 @@ const breadcrumbLd = JSON.stringify({
 </section>
 
 <!-- ══ PROOF ══════════════════════════════════════════════════ -->
-<section class="spf">
+<!-- <section class="spf">
   <div class="spf-wrap">
     <div class="mono small muted spf-ref reveal">{t('sv.proof.ref')}</div>
     <div class="spf-grid">
@@ -246,7 +246,7 @@ const breadcrumbLd = JSON.stringify({
       ))}
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- ══ PORTFOLIO ══════════════════════════════════════════════ -->
 <section class="spj">
@@ -331,7 +331,7 @@ const breadcrumbLd = JSON.stringify({
     <h2 class="sc-title reveal d1">{t('sv.cta.title')}</h2>
     <div class="sc-slide reveal d2">
       <p class="sc-s1">{t('sv.cta.slide1')}</p>
-      <p class="sc-s2 orange">{t('sv.cta.slide2')}</p>
+      <em class="sc-s2 serif-it orange">{t('sv.cta.slide2')}</em>
     </div>
     <p class="sc-sub mono small reveal d2">{t('sv.cta.sub')}</p>
     <div class="sc-actions reveal d3">
@@ -356,6 +356,12 @@ const breadcrumbLd = JSON.stringify({
 </Layout>
 
 <style>
+  .sp-num { color: var(--accent); margin-bottom: 24px; font-size: 25px !important; letter-spacing: .12em; }
+  .sp-sub { color: var(--cream-faint); font-size: 14px !important; letter-spacing: .06em; margin: 0; line-height: 1.6; }
+  .ssv-sub, .spj-sub { font-size: 14px !important }
+  .ssv-badge { color: var(--accent); font-size: 14px; letter-spacing: .14em; border: 1px solid rgba(255,91,31,.3); padding: 12px 20px; border-radius: 2px; display: inline-block; }
+
+
   /* ─── NAV ─── */
   .sn { position: fixed; top: 0; left: 0; right: 0; z-index: 50; backdrop-filter: blur(14px); background: rgba(10,10,10,0.8); border-bottom: 1px solid var(--line); }
   .sn-inner { max-width: 1400px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
@@ -387,7 +393,7 @@ const breadcrumbLd = JSON.stringify({
   .sh-actions { opacity: 0; animation: fadeUp .8s 1s both; }
   .sh-cta-btn { display: inline-flex; align-items: center; gap: 12px; padding: 18px 32px; border-radius: 999px; background: var(--cream); color: var(--ink); font-family: 'Archivo'; font-weight: 700; font-size: 15px; letter-spacing: .04em; text-transform: uppercase; transition: background .3s, color .3s; }
   .sh-cta-btn:hover { background: var(--accent); color: var(--ink); }
-  .sh-scroll { position: absolute; bottom: 40px; left: 24px; display: flex; align-items: center; gap: 10px; color: var(--cream-faint); opacity: 0; animation: fadeUp .8s 1.3s both; }
+  .sh-scroll { position: absolute; bottom: 3%; right: 10%; display: flex; align-items: center; gap: 10px; color: var(--cream-faint); opacity: 0; animation: fadeUp .8s 1.3s both; }
   /* Dot grid behind hero */
   .sh::before {
     content: '';
@@ -415,14 +421,13 @@ const breadcrumbLd = JSON.stringify({
   .sp-card:nth-child(3)::before { content: "03"; }
   @media (min-width: 900px) { .sp-card { border-bottom: 0; border-right: 1px solid var(--line); } .sp-card:last-child { border-right: 0; } }
   .sp-num { color: var(--accent); margin-bottom: 24px; font-size: 11px; letter-spacing: .12em; }
-  .sp-stat { font-family: 'Archivo'; font-weight: 900; font-size: clamp(20px, 2.6vw, 34px); letter-spacing: -0.03em; line-height: 1.1; color: var(--cream); margin: 0 0 12px; }
-  .sp-sub { color: var(--cream-faint); font-size: 11px; letter-spacing: .06em; margin: 0; line-height: 1.6; }
+  .sp-stat { font-family: 'Archivo'; font-weight: 900; font-size: clamp(38px, 3.6vw, 38px); letter-spacing: -0.03em; line-height: 1.1; color: var(--cream); margin: 0 0 12px; }
 
   /* ─── SERVICES ─── */
   .ssv { padding: 100px 0; }
   .ssv-wrap { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
   .ssv-head { margin-bottom: 56px; }
-  .ssv-title { font-family: 'Archivo'; font-weight: 900; font-size: clamp(40px, 5.5vw, 80px); letter-spacing: -0.04em; line-height: .9; margin: 10px 0 8px; color: var(--cream); }
+  .ssv-title { font-family: 'Archivo'; font-weight: 900; font-size: clamp(50px, 5.5vw, 80px); letter-spacing: -0.04em; line-height: .9; margin: 10px 0 8px; color: var(--cream); }
   .ssv-sub { margin: 0; }
 
   /* 3-col service cards */
@@ -439,16 +444,16 @@ const breadcrumbLd = JSON.stringify({
   .ssv-card:hover::before { transform: scaleX(1); }
   .ssv-card:hover { background: var(--ink-2); box-shadow: inset 0 0 80px rgba(255,91,31,0.04); }
   .ssv-card-top { margin-bottom: 20px; }
-  .ssv-badge { color: var(--accent); font-size: 10px; letter-spacing: .14em; border: 1px solid rgba(255,91,31,.3); padding: 3px 8px; border-radius: 2px; display: inline-block; }
-  .ssv-card-title { font-family: 'Archivo'; font-weight: 900; font-size: clamp(22px, 2.2vw, 30px); letter-spacing: -0.03em; line-height: 1; margin: 0 0 10px; color: var(--cream); }
-  .ssv-card-hook { font-size: 13px; font-weight: 600; margin: 0 0 16px; letter-spacing: .01em; }
-  .ssv-card-desc { font-size: clamp(13px, 1.1vw, 15px); line-height: 1.6; color: var(--cream-dim); margin: 0 0 28px; flex: 1; }
+  .ssv-card-title { font-family: 'Archivo'; font-weight: 900; font-size: clamp(28px, 2.2vw, 30px); letter-spacing: -0.03em; line-height: 1; margin: 0 0 10px; color: var(--cream); }
+  .ssv-card-hook { font-size: 14px; font-weight: 600; margin: 0 0 16px; letter-spacing: .01em; }
+  .ssv-card-desc { font-size: clamp(16px, 1.1vw, 16px); line-height: 1.6; color: var(--cream-dim); margin: 0 0 28px; flex: 1; }
   .ssv-card-list { list-style: none; padding: 0; margin: 0 0 32px; display: flex; flex-direction: column; gap: 10px; }
-  .ssv-card-list li { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--cream-dim); }
+  .ssv-card-list li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--cream-dim); }
   .ssv-check { color: var(--accent); font-weight: 700; font-size: 14px; flex-shrink: 0; }
   .ssv-card-cta { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 999px; border: 1px solid var(--cream-dim); font-family: 'Archivo'; font-weight: 600; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--cream); transition: all .3s; margin-top: auto; width: fit-content; }
   .ssv-card-cta:hover { border-color: var(--accent); color: var(--accent); }
-
+  .ssv-badge { color: var(--accent); font-size: 12px; letter-spacing: .14em; border: 1px solid rgba(255,91,31,.3); padding: 9px 16px; border-radius: 2px; display: inline-block; }
+  .ssv-sub, .spj-sub { font-size: 14px !important }
   /* Featured Desarrollo a Medida */
   .ssv-ft {
     border: 1px solid var(--accent);
@@ -472,10 +477,10 @@ const breadcrumbLd = JSON.stringify({
   .ssv-ft .ssv-badge { margin-bottom: 24px; display: block; width: fit-content; }
   .ssv-ft-title { font-size: clamp(40px, 5vw, 70px); margin: 0; color: var(--cream); display: flex; flex-direction: column; line-height: .85; }
   .ssv-ft-title em { font-style: normal; }
-  .ssv-ft-hook { font-size: clamp(15px, 1.3vw, 18px); font-weight: 600; margin: 0 0 16px; }
-  .ssv-ft-desc { font-size: clamp(14px, 1.1vw, 16px); line-height: 1.65; color: var(--cream-dim); margin: 0 0 28px; max-width: 48ch; }
+  .ssv-ft-hook { font-size: clamp(22px, 1.3vw, 18px); font-weight: 600; margin: 0 0 16px; }
+  .ssv-ft-desc { font-size: clamp(16px, 1.1vw, 16px); line-height: 1.65; color: var(--cream-dim); margin: 0 0 28px; max-width: 48ch; }
   .ssv-ft-list { margin-bottom: 36px !important; }
-  .ssv-ft-list li { font-size: 14px; }
+  .ssv-ft-list li { font-size: 16px; }
   .ssv-ft-cta { display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; border-radius: 999px; background: var(--accent); color: var(--ink); font-family: 'Archivo'; font-weight: 700; font-size: 14px; letter-spacing: .04em; text-transform: uppercase; transition: all .3s; width: fit-content; }
   .ssv-ft-cta:hover { background: var(--cream); transform: translateY(-2px); }
 
@@ -517,7 +522,7 @@ const breadcrumbLd = JSON.stringify({
   /* ─── FINAL CTA ─── */
   .sc { padding: 120px 0; background: linear-gradient(to bottom, var(--ink) 0%, #0d0b08 100%); text-align: center; position: relative; overflow: hidden; }
   .sc-wrap { max-width: 900px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
-  .sc-eyebrow { color: var(--accent); margin-bottom: 24px; }
+  .sc-eyebrow { color: var(--accent); margin-bottom: 24px; font-size: 12px !important }
   .sc-title { font-family: 'Archivo'; font-weight: 900; font-size: clamp(56px, 10vw, 140px); letter-spacing: -0.05em; line-height: .85; margin: 0 0 16px; color: var(--cream); }
   .sc-slide { margin-bottom: 32px; }
   .sc-slide p { margin: 0; }
