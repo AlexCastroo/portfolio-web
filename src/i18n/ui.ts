@@ -108,11 +108,11 @@ export const ui = {
     'sv.hero.cta': 'Solucionar esto',
 
     // Problems — The Slide (directo a la herida)
-    'sv.p1.stat': 'Sin web, no existes.',
+    'sv.p1.stat': 'Sin web, no existes',
     'sv.p1.sub': 'Google no puede mostrar lo que no existe.',
-    'sv.p2.stat': 'La IA trabaja para tu competencia.',
+    'sv.p2.stat': 'La IA trabaja para tu competencia',
     'sv.p2.sub': 'Mientras tú haces manual, ellos van automático.',
-    'sv.p3.stat': 'La idea no es el problema.',
+    'sv.p3.stat': 'La idea no es el problema',
     'sv.p3.sub': 'El obstáculo es no tener quien la construya.',
 
     // Services section
@@ -169,8 +169,8 @@ export const ui = {
     'sv.portfolio.nda': 'NDA',
     'sv.proj1.title': 'AreaSoccer',
     'sv.proj1.desc': 'Plataforma de gestión deportiva: equipos, jugadores, partidos y estadísticas en tiempo real.',
-    'sv.proj2.title': 'Royal FC Portal',
-    'sv.proj2.desc': 'Portal de captación para un club profesional en Dubái. Paquetes de prueba, formularios y pagos con Stripe.',
+    'sv.proj2.title': 'Fee Coffee Dubai',
+    'sv.proj2.desc': 'Cafetería con presencia en Dubai para la que construí una web optimizada para buscadores de IA con su menú digital, sistema de reservas y chatbot de atención al cliente vía WhatsApp.',
     'sv.proj3.title': 'TORSA Dashboard',
     'sv.proj3.desc': 'Monitorización de dispositivos en tiempo real para el sector minero. Alertas y anomalías vía middleware personalizado.',
 
@@ -311,11 +311,11 @@ export const ui = {
     'sv.hero.cta': 'Fix this',
 
     // Problems — The Slide
-    'sv.p1.stat': 'No website. You don\'t exist.',
+    'sv.p1.stat': 'No website. You don\'t exist',
     'sv.p1.sub': 'Google cannot show what doesn\'t exist.',
-    'sv.p2.stat': 'AI is working for your competition.',
+    'sv.p2.stat': 'AI is working for your competition',
     'sv.p2.sub': 'They automate while you do it manually.',
-    'sv.p3.stat': 'The idea isn\'t the problem.',
+    'sv.p3.stat': 'The idea isn\'t the problem',
     'sv.p3.sub': 'The obstacle is not having someone to build it.',
 
     // Services section
@@ -372,7 +372,7 @@ export const ui = {
     'sv.portfolio.nda': 'NDA',
     'sv.proj1.title': 'AreaSoccer',
     'sv.proj1.desc': 'Sports management platform: teams, players, matches and real-time statistics.',
-    'sv.proj2.title': 'Royal FC Portal',
+    'sv.proj2.title': 'Fee Coffee Dubai',
     'sv.proj2.desc': 'Recruitment portal for a professional club in Dubai. Trial packages, forms and Stripe payments.',
     'sv.proj3.title': 'TORSA Dashboard',
     'sv.proj3.desc': 'Real-time device monitoring for the mining sector. Alerts and anomalies via custom middleware.',
