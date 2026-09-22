@@ -489,55 +489,13 @@ const siteBase = (Astro.site?.href ?? 'https://alexcastro.dev').replace(/\/$/, '
 
   .featured-right { display: flex; align-items: center; justify-content: center; }
 
-  /* Laptop mockup */
-  .device-laptop { width: 100%; max-width: 560px; transform: rotate(-1.5deg); transition: transform .5s ease; }
-  .device-laptop:hover { transform: rotate(0deg) scale(1.02); }
-  .device-frame {
-    background: #2a2823;
-    border-radius: 12px 12px 4px 4px;
-    padding: 18px 18px 22px;
-    border: 1px solid #3a382f;
+  .featured-img {
+    display: block; width: 100%; max-width: 640px; height: auto;
+    border-radius: 8px; border: 1px solid var(--line);
     box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+    transition: transform .5s ease;
   }
-  .device-screen {
-    background: #0a0907;
-    border-radius: 4px;
-    overflow: hidden;
-    aspect-ratio: 16/10;
-    border: 1px solid #1d1c17;
-  }
-  .device-base {
-    height: 10px;
-    background: linear-gradient(to bottom, #3a382f, #1d1c17);
-    border-radius: 0 0 16px 16px;
-    margin: 0 -24px;
-  }
-  .mock-topbar {
-    display: flex; align-items: center; gap: 6px;
-    padding: 8px 12px; border-bottom: 1px solid var(--line);
-  }
-  .mock-dot { width: 8px; height: 8px; border-radius: 50%; background: #3a3830; }
-  .mock-url { margin-left: 12px; color: var(--cream-faint); font-size: 10px; }
-  .mock-body { display: grid; grid-template-columns: 90px 1fr; height: calc(100% - 32px); }
-  .mock-side { display: flex; flex-direction: column; gap: 8px; padding: 12px 8px; font-family: 'IBM Plex Mono'; font-size: 9px; color: var(--cream-faint); border-right: 1px solid var(--line); }
-  .mock-active { color: var(--accent) !important; }
-  .mock-main { padding: 14px 16px; display: flex; flex-direction: column; gap: 14px; }
-  .mock-h { display: flex; align-items: baseline; justify-content: space-between; }
-  .mock-big { font-size: 28px; color: var(--cream); }
-  .mock-big small { font-size: 0.5em; color: var(--cream-faint); }
-  .mock-match {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 14px; background: #15140f;
-    border: 1px solid var(--line);
-  }
-  .mock-team { display: flex; flex-direction: column; gap: 4px; font-size: 9px; color: var(--cream-dim); align-items: center; }
-  .mock-crest { width: 22px; height: 22px; border-radius: 50%; background: var(--accent); }
-  .mock-crest.c2 { background: var(--cream-dim); }
-  .mock-score { font-size: 24px; color: var(--cream); }
-  .mock-stats { display: flex; flex-direction: column; gap: 8px; }
-  .mock-stats > div { display: flex; flex-direction: column; gap: 4px; }
-  .bar { height: 4px; background: var(--ink-3); position: relative; }
-  .bar > div { position: absolute; left: 0; top: 0; bottom: 0; background: var(--accent); }
+  .featured-img:hover { transform: scale(1.02); }
 
   /* Timeline */
   .xp { padding-top: 60px; }
