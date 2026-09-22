@@ -13,6 +13,7 @@ const jobs = [
   { co: t('work.job4.co'), role: t('work.job4.role'), date: t('work.job4.date'), desc: t('work.job4.desc') },
 ];
 const tags = ["Laravel", "Vue 3", "MySQL", "Docker"];
+const projectsUrl = (lang === 'es' ? '/servicios' : '/en/services') + '#proyectos-reales';
 ---
 
 <section class="work" id="work">
@@ -38,10 +39,15 @@ const tags = ["Laravel", "Vue 3", "MySQL", "Docker"];
           <div class="tag-row reveal d2">
             {tags.map(tag => <span class="tag mono small">{tag}</span>)}
           </div>
-          <a href="https://areasoccer.app/" target="_blank" rel="noopener" class="btn-ghost reveal d3" data-hover>
-            <span>{t('work.seeProject')}</span>
-            <svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 8 H14 M10 4 L14 8 L10 12" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
-          </a>
+          <div class="featured-actions reveal d3">
+            <a href="https://areasoccer.app/" target="_blank" rel="noopener" class="btn-ghost" data-hover>
+              <span>{t('work.seeProject')}</span>
+              <svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 8 H14 M10 4 L14 8 L10 12" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+            </a>
+            <a href={projectsUrl} class="btn-ghost" data-hover>
+              <span>{t('work.moreProjects')}</span>
+            </a>
+          </div>
           <div class="featured-numbers reveal d4">
             <div><span class="display">100</span><span class="mono small muted">{t('work.users')}</span></div>
             <div><span class="display">98<small>%</small></span><span class="mono small muted">{t('work.uptime')}</span></div>
