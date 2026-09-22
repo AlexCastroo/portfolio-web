@@ -171,8 +171,8 @@ export const ui = {
     'sv.proj1.desc': 'Plataforma de gestión deportiva: equipos, jugadores, partidos y estadísticas en tiempo real.',
     'sv.proj2.title': 'Fee Coffee Dubai',
     'sv.proj2.desc': 'Cafetería con presencia en Dubai para la que construí una web optimizada para buscadores de IA con su menú digital, sistema de reservas y chatbot de atención al cliente vía WhatsApp.',
-    'sv.proj3.title': 'TORSA Dashboard',
-    'sv.proj3.desc': 'Monitorización de dispositivos en tiempo real para el sector minero. Alertas y anomalías vía middleware personalizado.',
+    'sv.proj3.title': 'Stiven Braids',
+    'sv.proj3.desc': 'Web responsive para un trenzista profesional, con posicionamiento SEO que le sitúa en 1ª posición en Google y campañas de email marketing para fidelizar clientes.',
 
     // Process
     'sv.process.ref': '— CÓMO FUNCIONA',
@@ -374,8 +374,8 @@ export const ui = {
     'sv.proj1.desc': 'Sports management platform: teams, players, matches and real-time statistics.',
     'sv.proj2.title': 'Fee Coffee Dubai',
     'sv.proj2.desc': 'Recruitment portal for a professional club in Dubai. Trial packages, forms and Stripe payments.',
-    'sv.proj3.title': 'TORSA Dashboard',
-    'sv.proj3.desc': 'Real-time device monitoring for the mining sector. Alerts and anomalies via custom middleware.',
+    'sv.proj3.title': 'Stiven Braids',
+    'sv.proj3.desc': 'Responsive website for a professional braider, with SEO that ranks him #1 on Google and email marketing campaigns to keep clients coming back.',
 
     // Process
     'sv.process.ref': '— HOW IT WORKS',
